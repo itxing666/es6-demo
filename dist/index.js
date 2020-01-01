@@ -1,3 +1,5 @@
+'use strict';
+
 // 第一节 环境搭建
 // let a = 12;
 // console.log(a);
@@ -67,5 +69,98 @@
 // let [a, b=' hello'] = ['itxing', undefined]
 // console.log(a + b) // itxing hello
 
-// let [a, b='']
-"use strict";
+// let [a, b='hello'] = ['itxing', null]
+// console.log(a + b)
+
+// // 对象的解构赋值 对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值
+// let {foo, bar} = {foo: 'itxing', bar: 'hello'}
+// console.log(foo + bar)
+
+// // 圆括号的使用 解构之前就定义了变量，这时候你再解构会出现问题,编译会报错
+// let foo;
+// {foo} = {foo: 'itxing'}
+// console.log('=================', foo)
+
+// // 要解决报错，在解构的语句外加一个圆括号
+// let foo
+// ({foo} = {foo: 'itxing'})
+// console.log('=============', foo)
+
+
+// // 字符串解构
+// const [a, b, c, d, e, f] = 'itxing'
+// console.log(a)
+// console.log(b)
+// console.log(c)
+// console.log(d)
+// console.log(e)
+// console.log(f)
+
+
+// // 第四节 扩展运算符和rest运算符...
+// function fun(...arg) {
+//   console.log(arg)
+// }
+// fun(1, 2, 3)
+
+// // 解决浅拷贝问题
+// // arr2变化了 arr1也变化了
+// let arr1 = ['www', 'itxing', 'com']
+// let arr2 = arr1
+// console.log(arr2)
+// arr2.push('hello')
+// console.log(arr1)
+
+// let arr1 = ['www', 'itxing', 'com']
+// let [...arr2] = arr1
+// // let arr2 = [...arr1]
+// console.log(arr2)
+// arr1.push('hello')
+// console.log(arr2)
+// console.log(arr1)
+
+// // rest运算符
+// function fun(first, ...arg) {
+//   console.log(arg)
+// }
+// fun(0, 1, 2, 3, 4, 5)
+
+// function fun(first, ...arg) {
+//   for (const val of arg) {
+//     console.log(val)
+//   }
+// }
+
+// fun(0, 1, 2, 3, 4, 5)
+
+// // 第五节 字符串模版 `` includes startsWith endsWith
+// // es5 的字符串拼接方案
+// let itxing = 'itxing'
+// let blog = '我是你的老朋友' + itxing + '字符串模版'
+// console.log(blog)
+
+// // es6 字符串模版
+// let itxing = 'itxing'
+// let blog = `我是你的老朋友 ${itxing}字符串模版`
+// console.log(blog)
+
+// // 对运算的支持
+// let a = 1
+// let b = 2
+// let result = `${a+b}`
+// console.log(result)
+
+// // 查找是否存在
+// let itxing = 'itxing'
+// let blog = '我是你的老朋友itxing'
+// console.log(blog.indexOf(itxing))
+// console.log(blog.includes(itxing))
+
+// // 判断开头是否存在
+// let itxing = 'itxing'
+// let blog = '我是你的老朋友itxing'
+// console.log(blog.startsWith(itxing))
+// console.log(blog.endsWith(itxing))
+
+// // 复制字符串
+console.log('test'.repeat(3));
