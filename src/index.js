@@ -163,6 +163,7 @@
 // // // 复制字符串
 // console.log('test'.repeat(3))
 
+// //第六节 数字的操作
 // // 二进制 0b 八进制0o 十六进制0x
 // let binary = 0b010101
 // console.log('===================', binary)
@@ -197,3 +198,131 @@
 // console.log(Number.isSafeInteger(a))
 
 
+// // 第七节 新增数组知识1
+// let json = {
+//   0: 'hello',
+//   1: 'itxing',
+//   2: '.com',
+//   length: 3
+// }
+// let arr = Array.from(json)
+// console.log('================', arr)
+
+// // Array.from  Array.of find fill
+// let arr = Array.of(3, 4, 5, 6)
+// console.log('='.repeat(30), arr)
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// let target = arr.find(val => {
+//   return val > 5
+// })
+// console.log('='.repeat(30), target)
+
+// // fill 填充
+// let arr = [0, 1, 2, 3, 4, 5, 6]
+// arr.fill('itxing', 2, 5)
+// console.log(arr)
+
+// let arr = ['a', 'b']
+// for (const val of arr.keys()) {
+//   console.log('==============', val)
+// }
+// console.log(Object.values(arr))
+
+
+// let arr = ['itxing', '.com', 'hello']
+// for (const item of arr) {
+//   console.log('='.repeat(30), item)
+// }
+
+// for (const index of arr.keys()) {
+//   console.log('='.repeat(30), index)
+// }
+
+// for (const [index, val] of arr.entries()) {
+//   console.log(index+':'+val)
+// }
+
+// let list = arr.entries()
+// console.log(list.next().value)
+// console.log(list.next().value)
+// console.log(list.next().value)
+
+// // ES6 箭头函数和扩展
+// function add(a, b) {
+//   return a+b;
+// }
+// console.log(add(1,2))
+
+// // ES6增加了默认值
+// function add(a, b=1) {
+//   return a+b;
+// }
+// console.log(add(1))
+
+
+// function add(a, b=1) {
+//   if (a === 0) {
+//     throw new Error('This is error')
+//   }
+//   return a+b
+// }
+// console.log(add(0))
+
+// // 会报错 使用了默认值又使用了严谨模式 产生冲突
+// function add(a, b=1) {
+//   'use strict'
+//   if(a === 0) {
+//     throw new Error('This is error')
+//   }
+//   return a+b
+// }
+// console.log(add(1))
+
+// function add(a, b) {
+//   'use strict'
+//   if (a === 0) {
+//     throw new Error('This is error')
+//   }
+//   return a+b
+// }
+// console.log(add(1,2))
+// console.log(add.length) //不知道函数需要传递几个参数怎么办
+
+// // 箭头函数 方法体内如果是两句话，那就需要在方法体外边加上{}括号
+// const add = (a, b=1) => a+b
+// console.log(add(1))
+
+
+// const add = (a, b=1) => {
+//   console.log('itxing')
+//   return a+b
+// }
+// console.log(add(1))
+
+
+// // 第十章 ES6的函数和数组补漏
+// let json = {
+//   a: 'itxing',
+//   b: '.com'
+// }
+// const fun = ({a, b='itxing'}) => {
+//   console.log(a, b)
+// }
+// fun(json)
+
+// // 数组的解构
+// let arr = ['itxing','.com','hello'];
+// function fun([a, ...b]){
+//     console.log(b);
+// }
+
+// fun(arr);
+
+
+// let arr = ['itxing','.com','hello'];
+// function fun(a,b,c){
+//   console.log(a,b,c);
+// }
+
+// fun(...arr);
