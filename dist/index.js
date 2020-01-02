@@ -326,4 +326,34 @@
 // }
 
 // fun(...arr);
+
+// // in的用法
+// let obj = {
+//   a: 'itxing',
+//   b: '.com'
+// }
+// console.log('a' in obj)
+
+// // 数组的判断
+// let arr = [,,,,,]
+// console.log(arr.length)
+// console.log(0 in arr)
+// let arr1 = ['itxing', '.com']
+// console.log(0 in arr1)
+
+
+// // 数组遍历的方法 forEach filter some map
+// let arr = ['itxing', '.com', 'hello']
+// arr.forEach((val, index) => console.log(index, val))
+
+// arr.filter(x => console.log(x))
+
+// arr.some(x => console.log(x))
+
+// arr.map(x => console.log(x))
+
+// // join()方法
+// let arr = ['itxing', '.com', 'hello']
+// console.log(arr.join('|'))
+// console.log(arr.toString())
 "use strict";
