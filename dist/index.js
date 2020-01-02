@@ -1,5 +1,3 @@
-'use strict';
-
 // 第一节 环境搭建
 // let a = 12;
 // console.log(a);
@@ -133,7 +131,7 @@
 
 // fun(0, 1, 2, 3, 4, 5)
 
-// // 第五节 字符串模版 `` includes startsWith endsWith
+// // 第五节 字符串模版 `` includes startsWith endsWith repeat
 // // es5 的字符串拼接方案
 // let itxing = 'itxing'
 // let blog = '我是你的老朋友' + itxing + '字符串模版'
@@ -162,5 +160,39 @@
 // console.log(blog.startsWith(itxing))
 // console.log(blog.endsWith(itxing))
 
-// // 复制字符串
-console.log('test'.repeat(3));
+// // // 复制字符串
+// console.log('test'.repeat(3))
+
+// // 二进制 0b 八进制0o 十六进制0x
+// let binary = 0b010101
+// console.log('===================', binary)
+// let octal = 0o666
+// console.log('===================', octal)
+
+// // Number.isFinite() 数字验证
+// let a = 11/4
+// console.log(Number.isFinite(a))
+// console.log(Number.isFinite('jspang'))
+// console.log(Number.isFinite(NaN))
+// console.log(Number.isFinite(undefined))
+
+// // NaN是特殊的非数字，Number.isNaN()来进行验证
+// console.log(Number.isNaN(NaN))
+
+// // 判断是否为整数Number.isInteger()
+// console.log(Number.isInteger(1))
+
+// // 整数转换 Number.parseInt()  Number.parseFloat()
+// let a = '9.18'
+// console.log(Number.parseInt(a))
+// console.log(Number.parseFloat(a))
+
+// // 整数的取值范围
+// let a = Math.pow(2,53)-1
+// console.log('===========', a)
+// console.log(Number.MAX_SAFE_INTEGER)
+// console.log(Number.MIN_SAFE_INTEGER)
+
+// // 安全整数判断 isSafeInteger
+// console.log(Number.isSafeInteger(a))
+"use strict";
