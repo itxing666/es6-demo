@@ -398,4 +398,38 @@
 // const c = {c: 'world'}
 // const d = Object.assign(a, b, c)
 // console.log(d)
+
+
+// // 第十二节 Symbol在对象中的应用
+// const a = new String;
+// const b = new Number;
+// const c = new Boolean;
+// const d = new Array;
+// const e = new Object;
+// const f = Symbol();
+// console.log(typeof(d))
+// console.log(typeof(f))
+
+// // 没有toString的是红字，toString的是黑字
+// const g = Symbol('itxing')
+// console.log('='.repeat(30), g)
+// console.log('='.repeat(30), g.toString())
+
+// // Symbol对象元素的保护作用
+// // 没有保护的写法
+// const obj = { name: 'itxing', skill: 'web', age: 18 }
+// for (let item in obj) {
+//   console.log(obj[item])
+// }
+
+
+// let obj = {name: 'itxing', skill: 'web'}
+// let age = Symbol()
+// obj[age] = 18
+// for (const key in obj) {
+//   if (obj.hasOwnProperty(key)) {
+//     const element = obj[key];
+//     console.log('='.repeat(30), element)
+//   }
+// }
 "use strict";
