@@ -1,3 +1,5 @@
+'use strict';
+
 // 第一节 环境搭建
 // let a = 12;
 // console.log(a);
@@ -465,4 +467,31 @@
 // const obj = { a: 'itxing', b: '.com' }
 // weakObj.add(obj)
 // console.log('='.repeat(30), weakObj)
-"use strict";
+
+
+// // 第十四节 map数据结构
+// let json = {
+//   name: 'itxing',
+//   skill: 'web'
+// }
+// console.log('='.repeat(30), json.name)
+
+var json = {
+  name: 'itxing',
+  skill: 'web'
+};
+var map = new Map();
+map.set('a', 'haha');
+console.log('='.repeat(30), map);
+// map的增删查 取值get
+console.log(map.get('a'));
+// 删除 delete
+map.delete('a');
+console.log(map);
+// size属性
+console.log(map.size);
+// 查找是否存在has
+console.log(map.has('a'));
+// 清空所有clear
+map.clear();
+console.log('='.repeat(30), map);

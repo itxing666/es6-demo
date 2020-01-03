@@ -466,3 +466,30 @@
 // weakObj.add(obj)
 // console.log('='.repeat(30), weakObj)
 
+
+// // 第十四节 map数据结构
+// let json = {
+//   name: 'itxing',
+//   skill: 'web'
+// }
+// console.log('='.repeat(30), json.name)
+
+let json = {
+  name: 'itxing',
+  skill: 'web'
+}
+let map = new Map()
+map.set('a', 'haha')
+console.log('='.repeat(30), map)
+// map的增删查 取值get
+console.log(map.get('a'))
+// 删除 delete
+map.delete('a')
+console.log(map)
+// size属性
+console.log(map.size)
+// 查找是否存在has
+console.log(map.has('a'))
+// 清空所有clear
+map.clear()
+console.log('='.repeat(30), map)
