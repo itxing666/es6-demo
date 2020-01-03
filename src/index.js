@@ -357,4 +357,44 @@
 // console.log(arr.join('|'))
 // console.log(arr.toString())
 
-// 第十一节
+// // 第十一节 ES6中的对象
+// let name = 'itxing'
+// let skill = 'web'
+// let obj = {name, skill}
+// console.log(obj)
+
+// // 对象key值构建
+// let key = 'skill'
+// let obj = {
+//   [key]: 'web'
+// }
+// console.log(obj.skill)
+
+// // 自定义对象方法
+// const obj = {
+//   add: function(a,b) {
+//     return a + b
+//   }
+// }
+// console.log(obj.add(1,2))
+
+// // Object.is() 对象比较
+// const obj1 = {name: 'hello'}
+// const obj2 = {name: 'world'}
+// console.log(obj1.name === obj2.name)
+// console.log(Object.is(obj1.name, obj2.name))
+
+
+// // ===为同值相等，is()为严格相等
+// console.log(+0 === -0)
+// console.log(NaN === NaN)
+// console.log(Object.is(+0, -0))
+// console.log(Object.is(NaN, NaN))
+
+
+// // Object.assign() 合并对象
+// const a = {a: 'itxing'}
+// const b = {b: 'hello'}
+// const c = {c: 'world'}
+// const d = Object.assign(a, b, c)
+// console.log(d)
