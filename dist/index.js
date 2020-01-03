@@ -529,20 +529,65 @@
 // console.log(obj.name)
 
 
-// apply使用
-var targte = function targte() {
-  return 'I am JSPang';
-};
-var handler = {
-  apply: function apply(target, ctx, args) {
-    console.log('='.repeat(30), target);
-    console.log('='.repeat(30), ctx);
-    console.log('='.repeat(30), args[0]);
-    console.log('do apply');
-    return Reflect.apply.apply(Reflect, arguments);
+// // apply使用
+// var targte = function () {
+//   return 'I am JSPang';
+// };
+// var handler = {
+//   apply: function(target, ctx, args) {
+//     console.log('='.repeat(30), target)
+//     console.log('='.repeat(30), ctx)
+//     console.log('='.repeat(30), args[0])
+//     console.log('do apply');
+//     return Reflect.apply(...arguments);
+//   }
+// }
+
+// var pro = new Proxy(targte, handler);
+
+// console.log(pro('a'));
+
+
+// 第十六节 promise 对象的使用
+var state = 1;
+function step1(resolve, reject) {
+  console.log('1.开始-洗菜做饭');
+  if (state === 1) {
+    resolve('洗菜做饭--完成');
+  } else {
+    reject('洗菜做饭--出错');
   }
-};
+}
 
-var pro = new Proxy(targte, handler);
+function step2(resolve, reject) {
+  console.log('2.开始-坐下来吃饭');
+  if (state === 1) {
+    reject('坐下来吃饭--出错');
+    resolve('坐下来吃饭--完成');
+  } else {
+    reject('坐下来吃饭--出错');
+  }
+}
 
-console.log(pro('a'));
+function step3(resolve, reject) {
+  console.log('3.开始-收拾桌子洗碗');
+  if (state === 1) {
+    reject('收拾桌子洗碗--出错');
+    resolve('收拾桌子洗碗--完成');
+  } else {
+    reject('收拾桌子洗碗--出错');
+  }
+}
+
+new Promise(step1).then(function (val) {
+  console.log(val);
+  return new Promise(step2);
+}).then(function (val) {
+  console.log(val);
+  return new Promise(step3);
+}).then(function (val) {
+  console.log(val);
+  return val;
+}).catch(function (err) {
+  console.log(err);
+});
