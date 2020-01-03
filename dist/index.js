@@ -432,4 +432,37 @@
 //     console.log('='.repeat(30), element)
 //   }
 // }
+
+// // 第十三节 Set WeakSet的数据结构
+// // Set的声明
+// const setArr = new Set(['itxing', '.com', 'hello', 'hello'])
+// console.log('='.repeat(30), setArr)
+
+// // Set值的增删查
+// setArr.add('haha')
+// console.log(setArr)
+// setArr.delete('haha')
+// console.log(setArr)
+// console.log(setArr.has('hello'))
+// // setArr.clear()
+// console.log('='.repeat(30), setArr)
+// for (const item of setArr) {
+//   console.log('='.repeat(30), item)
+// }
+
+
+// // size 属性
+// const setArr = new Set(['itxing', '.com', 'hello', 'hello'])
+// for (const item of setArr) {
+//   console.log('='.repeat(30), item)
+// }
+// console.log('='.repeat(30), setArr.size)
+
+// setArr.forEach(val => console.log(val))
+
+// // WeakSet 声明
+// const weakObj = new WeakSet()
+// const obj = { a: 'itxing', b: '.com' }
+// weakObj.add(obj)
+// console.log('='.repeat(30), weakObj)
 "use strict";
