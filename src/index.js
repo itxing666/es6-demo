@@ -474,22 +474,73 @@
 // }
 // console.log('='.repeat(30), json.name)
 
-let json = {
-  name: 'itxing',
-  skill: 'web'
+// let json = {
+//   name: 'itxing',
+//   skill: 'web'
+// }
+// let map = new Map()
+// map.set('a', 'haha')
+// console.log('='.repeat(30), map)
+// // map的增删查 取值get
+// console.log(map.get('a'))
+// // 删除 delete
+// map.delete('a')
+// console.log(map)
+// // size属性
+// console.log(map.size)
+// // 查找是否存在has
+// console.log(map.has('a'))
+// // 清空所有clear
+// map.clear()
+// console.log('='.repeat(30), map)
+
+
+// // 第十五节 Proxy进行预处理
+// const obj = {
+//   add: function(val) {
+//     return val+10
+//   },
+//   name: 'test'
+// }
+// console.log(obj.add(100))
+// console.log(obj.name)
+
+// // 声明Proxy
+// const obj = new Proxy({
+//   add: function (val) {
+//     return val+10
+//   },
+//   name: 'I am itxing'
+// }, {
+//   get: function(target, key, property) {
+//     console.log('='.repeat(30), 'come in get')
+//     return target[key]
+//   },
+//   set: function(target, key, value, receiver) {
+//     console.log(`setting ${key} = ${value}`)
+//     console.log('='.repeat(30), receiver)
+//     return target[key] = value
+//   }
+// })
+// console.log(obj.name)
+// obj.name = 'hello'
+// console.log(obj.name)
+
+
+// apply使用
+var targte = function () {
+  return 'I am JSPang';
+};
+var handler = {
+  apply: function(target, ctx, args) {
+    console.log('='.repeat(30), target)
+    console.log('='.repeat(30), ctx)
+    console.log('='.repeat(30), args[0])
+    console.log('do apply');
+    return Reflect.apply(...arguments);
+  }
 }
-let map = new Map()
-map.set('a', 'haha')
-console.log('='.repeat(30), map)
-// map的增删查 取值get
-console.log(map.get('a'))
-// 删除 delete
-map.delete('a')
-console.log(map)
-// size属性
-console.log(map.size)
-// 查找是否存在has
-console.log(map.has('a'))
-// 清空所有clear
-map.clear()
-console.log('='.repeat(30), map)
+
+var pro = new Proxy(targte, handler);
+
+console.log(pro('a'));
