@@ -547,46 +547,94 @@
 
 
 
-// 第十六节 promise 对象的使用
-let state = 1
-function step1(resolve, reject) {
-  console.log('1.开始-洗菜做饭')
-  if (state === 1) {
-    resolve('洗菜做饭--完成')
-  } else {
-    reject('洗菜做饭--出错')
-  }
-}
+// // 第十六节 promise 对象的使用
+// let state = 1
+// function step1(resolve, reject) {
+//   console.log('1.开始-洗菜做饭')
+//   if (state === 1) {
+//     resolve('洗菜做饭--完成')
+//   } else {
+//     reject('洗菜做饭--出错')
+//   }
+// }
 
-function step2(resolve, reject) {
-  console.log('2.开始-坐下来吃饭')
-  if (state === 1) {
-    reject('坐下来吃饭--出错')
-    resolve('坐下来吃饭--完成')
-  } else {
-    reject('坐下来吃饭--出错')
-  }
-}
+// function step2(resolve, reject) {
+//   console.log('2.开始-坐下来吃饭')
+//   if (state === 1) {
+//     reject('坐下来吃饭--出错')
+//     resolve('坐下来吃饭--完成')
+//   } else {
+//     reject('坐下来吃饭--出错')
+//   }
+// }
 
-function step3(resolve, reject) {
-  console.log('3.开始-收拾桌子洗碗')
-  if (state === 1) {
-    reject('收拾桌子洗碗--出错')
-    resolve('收拾桌子洗碗--完成')
-  } else {
-    reject('收拾桌子洗碗--出错')
-  }
-}
+// function step3(resolve, reject) {
+//   console.log('3.开始-收拾桌子洗碗')
+//   if (state === 1) {
+//     reject('收拾桌子洗碗--出错')
+//     resolve('收拾桌子洗碗--完成')
+//   } else {
+//     reject('收拾桌子洗碗--出错')
+//   }
+// }
 
-new Promise(step1).then(function(val) {
-  console.log(val)
-  return new Promise(step2)
-}).then(function(val) {
-  console.log(val)
-  return new Promise(step3)
-}).then(function(val) {
-  console.log(val)
-  return val
-}).catch(err => {
-  console.log(err)
-})
+// new Promise(step1).then(function(val) {
+//   console.log(val)
+//   return new Promise(step2)
+// }).then(function(val) {
+//   console.log(val)
+//   return new Promise(step3)
+// }).then(function(val) {
+//   console.log(val)
+//   return val
+// }).catch(err => {
+//   console.log(err)
+// })
+
+// // 第十七节 class类的使用
+// class Coder {
+//   name(val) {
+//     console.log('='.repeat(30), val)
+//   }
+// }
+// const itxing = new Coder()
+// itxing.name('hello')
+
+
+// // 类的多方法声明 注意的是两个方法中间不要写逗号了，还有这里的this指类本身
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//     return val
+//   }
+//   skill(val) {
+//     console.log(this.name('itxing')+':'+'skill:'+val)
+//   }
+// }
+// const itxing = new Coder()
+// itxing.name('itxing')
+// itxing.skill('web')
+
+
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//     return val
+//   }
+//   skill(val) {
+//     console.log(this.name('itxing')+ ':'+'skill:'+val)
+//   }
+//   constructor(a, b) {
+//     this.a = a
+//     this.b = b
+//   }
+//   add() {
+//     return this.a + this.b
+//   }
+// }
+// const itxing = new Coder(1, 2)
+// console.log(itxing.add())
+// itxing.skill('web')
+
+
+// 第十八节 模块化操作
