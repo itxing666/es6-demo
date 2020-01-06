@@ -1,4 +1,12 @@
-// 第一节 环境搭建
+'use strict';
+
+var _temp = require('./temp');
+
+var _temp2 = _interopRequireDefault(_temp);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+console.log('='.repeat(30), _temp2.default); // 第一节 环境搭建
 // let a = 12;
 // console.log(a);
 
@@ -636,5 +644,10 @@
 // itxing.skill('web')
 
 
-// 第十八节 模块化操作
-"use strict";
+// // 第十八节 模块化操作 node dist/index.js 执行代码
+// import a from './temp.js'
+// console.log('='.repeat(30), a)
+
+// import {a,add} from './temp'
+// console.log(a)
+// console.log(add(1,2))

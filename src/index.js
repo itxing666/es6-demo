@@ -637,4 +637,14 @@
 // itxing.skill('web')
 
 
-// 第十八节 模块化操作
+// // 第十八节 模块化操作 node dist/index.js 执行代码
+// import a from './temp.js'
+// console.log('='.repeat(30), a)
+
+// import {a,add} from './temp'
+// console.log(a)
+// console.log(add(1,2))
+
+
+import a from './temp'
+console.log('='.repeat(30), a)
